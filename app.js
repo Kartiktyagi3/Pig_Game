@@ -6,19 +6,25 @@ init()
 document.querySelector('.btn-new').addEventListener('click',init);
 
 function init(){
+    //initialize the variables
     scores = [0,0];
     activeScore = 0;
     activePlayer = 0;
     gameActive = true;
+    //reset name to player names
     document.getElementById('name-0').textContent='Player 1';
     document.getElementById('name-1').textContent='Player 2';
+    //reset scores
     document.getElementById('score-0').textContent = 0;
     document.getElementById('score-1').textContent = 0;
     document.getElementById('current-0').textContent = 0;
     document.getElementById('current-1').textContent = 0;
+    //hide the dice 
     document.querySelector('.dice').style.display = 'none';
+    //remove the winner class from the winner
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
+    //remove first to prevent multiple active classes from being applied 
     document.querySelector('.player-0-panel').classList.remove('active');
     document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.add('active');
